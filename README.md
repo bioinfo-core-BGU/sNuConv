@@ -89,3 +89,13 @@ scaden predict \
 	bulk_data_training.txt
 ```
 
+As a last step, we compute cell-type regression model using the "snuc_truep.txt" and the prediction results created by Scaden
+```
+Rscript CreateModel.R \
+	--Celltypes \
+	--truep CreateMatrices/snuc_truep.txt \
+	--predictions Scaden_predict_training_data/predictions.txt \
+	--outDir Create_Model/
+```
+As a result, we should have a "Model.txt" file which includes the cell-types regression model with the $'R2'$
+
