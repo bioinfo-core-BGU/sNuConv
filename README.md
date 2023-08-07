@@ -41,8 +41,8 @@ In parallel, we simulate the data to create the per-gene regression model using 
 python simulate_correlations_data.py \
     CreateMatrices/snuc_counts.txt \
 	CreateMatrices/snuc_celltypes.txt \
-    CreateMatrices/snuc_truep.txt \
-    10000 \
+	CreateMatrices/snuc_truep.txt \
+	10000 \
 	30 \
 	Simulate_Correlations_data/
 ```
