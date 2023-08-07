@@ -6,7 +6,7 @@ A bulk RNA-seq deconvolution method trained on single-nucleus RNA-seq data.
 A sNuConv workflow consists of four major steps:
 * Generating per-gene regression model
 * Pseudo-bulk simulation
-* Deep-learning training using Scaden
+* Deep-learning training using [Scaden](https://github.com/KevinMenden/scaden)
 * Computing cell-type regression model
 
 If training data in ExpressionSet (ESET) is already available, you can start at creating the datasets for Scaden. Otherwise you will first have to process snRNA-seq and bulk RNA-seq datasets to generate a training dataset as ExpressionSet (ESET).
