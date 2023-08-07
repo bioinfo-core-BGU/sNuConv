@@ -1,7 +1,7 @@
 
 # sNuConv
 
-A bulk RNA-seq deconvolution method trained on single-nucleus RNA-seq data
+A bulk RNA-seq deconvolution method trained on single-nucleus RNA-seq data.
 ## Usage
 A sNuConv workflow consists of four major steps:
 * Generating per-gene regression model
