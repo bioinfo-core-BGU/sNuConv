@@ -97,7 +97,8 @@ Rscript CreateModel.R \
 	--predictions Scaden_predict_training_data/predictions.txt \
 	--outDir Create_Model/
 ```
-As a result, we should have a "Model.txt" file which includes a per cell-type regression model with the corresponding $R^2$ value
+As a result, we should have a "Model.txt" file which includes a per cell-type regression model with the corresponding $R^2$ value.
+
 For the final corrected predictions, you should use the initial predictions with the "Model.txt" file, and choose on a threshold to use for correction based on the $R^2$ (Default: 0.8)
 ```
 Rscript CorrectPredictions.R \
