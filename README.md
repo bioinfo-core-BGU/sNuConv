@@ -39,7 +39,7 @@ This generates 1000 samples of training data in the "Pseudo_Bulk_Simulation" dir
 In parallel, we simulate the data to create the per-gene regression model using the true snRNA-seq proportions
 ```
 python simulate_correlations_data.py \
-    CreateMatrices/snuc_counts.txt \
+	CreateMatrices/snuc_counts.txt \
 	CreateMatrices/snuc_celltypes.txt \
 	CreateMatrices/snuc_truep.txt \
 	10000 \
