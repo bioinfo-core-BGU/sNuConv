@@ -1,0 +1,16 @@
+	0
+0	ASPC1.APC
+1	B.Cells
+2	SMC
+3	ASPC2.ASC
+4	Pericytes
+5	Adipocytes
+6	Monocytes
+7	Endothelial
+8	Macrophage
+9	Lymph_Endo
+10	Mast
+11	Dendritic
+12	Mesothelial
+13	Pre.Myeloid
+14	NK.T
