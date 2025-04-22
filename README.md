@@ -60,9 +60,9 @@ Re-analysis of the data without sample 3313 showed slightly stronger results tha
      ```  
 	 
     If it dose not work:
-     ```Bash
+    ```Bash
         source activate RNASeq
-     ```  
+    ```  
 	 
   2. Prepare reference 
      ```Bash
