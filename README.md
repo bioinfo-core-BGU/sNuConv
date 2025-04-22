@@ -58,13 +58,13 @@ Re-analysis of the data without sample 3313 showed slightly stronger results tha
   ### Mapping
   Using RSEM to map the Bulk RNASeq Samples to the Human Genome v**GRCh38.100**
   1. Activate **RNASeq** Conda environment:
-     ```Bash
+    ```Bash
         conda activate RNASeq
-     ```  
+    ```  
     If it dose not work:
     ```Bash
         source activate RNASeq
-     ```  
+    ```  
   2. Prepare reference 
      ```Bash
         rsem-prepare-reference \
