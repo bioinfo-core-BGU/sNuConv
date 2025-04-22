@@ -2,6 +2,114 @@
 # sNuConv
 
 A bulk RNA-seq deconvolution method trained on single-nucleus RNA-seq data.
+See the manuscript published in **[iScience](https://www.sciencedirect.com/science/article/pii/S2589004224015931?via%3Dihub)**
+
+**iMPORTANT Erratum statement regarding the published manuscript:**
+The authors have discovered an error in identification of sample 3313 sent for snRNA-seq,
+such, that it was from a different donor than true-sample 3313 sent for bulk RNA-seq. Hence, in the first cohort, only 6, not 7, hVAT samples were analyzed in parallel by bulk and snRNA-seq.
+Re-analysis of the data without sample 3313 showed slightly stronger results than originally reported, thus having no material effect on the results and conclusions of the study
+
+**This Github repo dose not include Sample 3313 anymore**
+
+
+
+### Table of Contents    
+- [Dependencies](#dependencies)
+- [Predicting hVAT\hSAT cell-type Proportions](#Predicting)
+  - [Mapping Bulk RNASeq](#Mapping)
+  - [Using Docker](#using-docker)
+  - [No Conda [Not Recommended]](#no-conda-not-recommended)
+- [Tutorial](#tutorial)
+- [Contact](#contact)
+
+&nbsp;  
+&nbsp;
+&nbsp;  
+&nbsp;
+&nbsp;  
+&nbsp;
+&nbsp;  
+&nbsp;
+&nbsp;  
+&nbsp;
+&nbsp;  
+&nbsp;
+&nbsp;  
+&nbsp;
+
+
+## Dependencies
+1. Clone the git repo:
+   ```Bash
+      bash
+      git clone https://github.com/bioinfo-core-BGU/sNuConv.git
+      cd sNuConv
+```  
+2. Install mamba and Create the **Scaden** conda environment:
+    ```Bash
+       conda install conda-forge::mamba
+       mamba create -f Scaden_environment.yml
+    ```  
+3. Create the **RNASeq** conda environment:
+   ```Bash
+       mamba create -n RNASeq bioconda::rsem bioconda::star
+    ```  
+   
+4. Download the Human Genome and annotation. **It is very important to use this specific versions of genome and annotation since these where used for training Scaden**
+```Bash
+       mkdir Genome
+	   cd Genome
+	   wget http://ftp.ensembl.org/pub/release-100/gtf/homo_sapiens/Homo_sapiens.GRCh38.100.gtf.gz
+	   wget http://ftp.ensembl.org/pub/release-100/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+	   gzip -d *.gz
+	   cd ..
+    ```  
+## Predicting
+
+  ### Mapping
+  Using RSEM to map the Bulk RNASeq Samples to the Human Genome v**GRCh38.100**
+  1. Activate **RNASeq** Conda environment:
+     ```Bash
+        conda activate RNASeq
+     ```  
+    If it dose not work:
+    ```Bash
+        source activate RNASeq
+     ```  
+  2. Prepare reference 
+     ```Bash
+        rsem-prepare-reference \
+            --gtf Genome/Homo_sapiens.GRCh38.100.gtf \
+            --star --star-path $CONDA_PREFIX/bin  \
+            Genome/Homo_sapiens.GRCh38.dna.primary_assembly.fa  \
+            Genome/reference 
+     ```  
+  3. Map Samples to the reference genome (Do it for all your samples):
+     ```Bash
+        mkdir Samples
+        mkdir Samples/Sample1
+        
+        rsem-calculate-expression \
+        --append-names \
+        --estimate-rspd \
+        --keep-intermediate-files \
+        --output-genome-bam \
+        --forward-prob 0.5 \
+        -p 10 \
+        --star --star-path $CONDA_PREFIX/bin  \
+        Sample1.fastq \
+        Genome/reference \
+        Samples/Sample1 \
+        > Samples/Sample1/Sample1_RSEM.out
+     ```  
+  4. After Mapping all samples, Marge all Samples count data in to one file:
+     ```Bash
+        rsem-generate-data-matrix  \
+           $(find Samples/ -type f -name "*.genes.results")  \
+           > Samples/GeneMat.results 
+     ```  
+
+
 ## Usage
 A sNuConv workflow consists of four major steps:
 * Generating per-gene regression model
