@@ -25,17 +25,6 @@ Re-analysis of the data without sample 3313 showed slightly stronger results tha
 &nbsp;  
 &nbsp;
 &nbsp;  
-&nbsp;
-&nbsp;  
-&nbsp;
-&nbsp;  
-&nbsp;
-&nbsp;  
-&nbsp;
-&nbsp;  
-&nbsp;
-&nbsp;  
-&nbsp;
 
 
 ## Dependencies
