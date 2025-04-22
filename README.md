@@ -9,7 +9,7 @@ The authors have discovered an error in identification of sample 3313 sent for s
 such, that it was from a different donor than true-sample 3313 sent for bulk RNA-seq. Hence, in the first cohort, only 6, not 7, hVAT samples were analyzed in parallel by bulk and snRNA-seq.
 Re-analysis of the data without sample 3313 showed slightly stronger results than originally reported, thus having no material effect on the results and conclusions of the study
 
-**This Github repo dose not include Sample 3313 anymore**
+**The models in this Github repo dose not include Sample 3313 anymore**
 
 
 
@@ -17,13 +17,10 @@ Re-analysis of the data without sample 3313 showed slightly stronger results tha
 - [Dependencies](#dependencies)
 - [Predicting hVAT\hSAT cell-type Proportions](#Predicting)
   - [Mapping Bulk RNASeq](#Mapping)
-  - [Using Docker](#using-docker)
-  - [No Conda [Not Recommended]](#no-conda-not-recommended)
-- [Tutorial](#tutorial)
-- [Contact](#contact)
+  - [Predicting](#Predicting)
+- [Traning a new Model from SnucSeq Data](#Traning-a-new-Model-from-SnucSeq-Data)
+- [Contact](#Contact)
 
-&nbsp;  
-&nbsp;
 &nbsp;  
 
 
@@ -147,7 +144,7 @@ Re-analysis of the data without sample 3313 showed slightly stronger results tha
 	 ```
 
 
-## Usage
+## Traning a new Model from SnucSeq Data
 A sNuConv workflow consists of four major steps:
 * Generating per-gene regression model
 * Pseudo-bulk simulation
@@ -252,3 +249,7 @@ Rscript CorrectPredictions.R \
 	--outDir Correct_Predictions/
 ```
 Now you should have a file called "corrected_predictions.txt" in the "Correct_Predictions" directory, which contains your corrected cell-type proportions.
+
+
+## Contact
+  Send an Email to levinl@bgu.ac.il
