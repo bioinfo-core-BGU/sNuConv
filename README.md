@@ -56,7 +56,7 @@ Re-analysis of the data without sample 3313 showed slightly stronger results tha
     ```  
    
 4. Download the Human Genome and annotation. **It is very important to use this specific versions of genome and annotation since these where used for training Scaden**
-```Bash
+    ```Bash
        mkdir Genome
 	   cd Genome
 	   wget http://ftp.ensembl.org/pub/release-100/gtf/homo_sapiens/Homo_sapiens.GRCh38.100.gtf.gz
