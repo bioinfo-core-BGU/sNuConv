@@ -40,11 +40,11 @@ Re-analysis of the data without sample 3313 showed slightly stronger results tha
 
 ## Dependencies
 1. Clone the git repo:
-   ```Bash
+    ```Bash
       bash
       git clone https://github.com/bioinfo-core-BGU/sNuConv.git
       cd sNuConv
-```  
+    ```  
 2. Install mamba and Create the **Scaden** conda environment:
     ```Bash
        conda install conda-forge::mamba
