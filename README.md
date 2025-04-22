@@ -97,6 +97,53 @@ Re-analysis of the data without sample 3313 showed slightly stronger results tha
            $(find Samples/ -type f -name "*.genes.results")  \
            > Samples/GeneMat.results 
      ```  
+  
+  ### Predicting
+  1. Preprocess:
+     ```Bash
+        mkdir Predicting_hSAT
+		
+        Rscript scripts/Preprocess.R \
+			--bulk_source RSEM \
+			--bulk_counts Samples/GeneMat.results \
+			--model_dir models/hSAT/Scaden_model \
+			--outDir Predicting_hSAT/ 
+			
+		mkdir Predicting_hVAT
+		
+        Rscript scripts/Preprocess.R \
+			--bulk_source RSEM \
+			--bulk_counts Samples/GeneMat.results \
+			--model_dir models/hVAT/Scaden_model \
+			--outDir Predicting_hVAT/ 
+			
+     ```  
+  2. Predict
+    ```Bash
+	   scaden predict \
+		--outname Predicting_hSAT//predictions.txt \
+		--model_dir models/hSAT/Scaden_model \
+		Predicting_hSAT//bulk_data.txt   
+		
+		scaden predict \
+		--outname Predicting_hVAT//predictions.txt \
+		--model_dir models/hVAT/Scaden_model \
+		Predicting_hVAT//bulk_data.txt   
+	 
+	```
+  3. Correct Predictions
+    ```Bash
+	   Rscript scripts/CorrectPredictions.R \
+		--model models/hSAT/cell_type_regression_model/Model.txt \
+		--predictions Predicting_hSAT//predictions.txt \
+		--outDir Predicting_hSAT/ 
+		
+		Rscript scripts/CorrectPredictions.R \
+		--model models/hVAT/cell_type_regression_model/Model.txt \
+		--predictions Predicting_hVAT//predictions.txt \
+		--outDir Predicting_hVAT/ 
+	 
+	```
 
 
 ## Usage
