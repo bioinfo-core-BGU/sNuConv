@@ -1,5 +1,5 @@
 
-# sNuConv
+# sNucConv
 
 A bulk RNA-seq deconvolution method trained on single-nucleus RNA-seq data.
 See the manuscript published in **[iScience](https://www.sciencedirect.com/science/article/pii/S2589004224015931?via%3Dihub)**
