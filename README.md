@@ -4,7 +4,7 @@
 A bulk RNA-seq deconvolution method trained on single-nucleus RNA-seq data.
 See the manuscript published in **[iScience](https://www.sciencedirect.com/science/article/pii/S2589004224015931?via%3Dihub)**
 
-**iMPORTANT Erratum statement regarding the published manuscript:**
+**IMPORTANT Erratum statement regarding the published manuscript:**
 The authors have discovered an error in identification of sample 3313 sent for snRNA-seq,
 such, that it was from a different donor than true-sample 3313 sent for bulk RNA-seq. Hence, in the first cohort, only 6, not 7, hVAT samples were analyzed in parallel by bulk and snRNA-seq.
 Re-analysis of the data without sample 3313 showed slightly stronger results than originally reported, thus having no material effect on the results and conclusions of the study
