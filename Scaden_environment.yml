@@ -121,5 +121,5 @@ dependencies:
     - typing-extensions==3.7.4.3
     - wrapt==1.12.1
     - xlrd==1.2.0
-prefix: /gpfs0/system/conda/miniconda2/envs/Scaden
+
 
