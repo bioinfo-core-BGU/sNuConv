@@ -1,0 +1,11 @@
+	0
+0	ASPC2.ASC
+1	Lymphoid_Immune
+2	Mast
+3	Pre.Myeloid
+4	Vascular
+5	Adipocytes
+6	ASPC1.APC
+7	Myeloid_Immune
+8	Mesothelial
+9	Lymph_Endo

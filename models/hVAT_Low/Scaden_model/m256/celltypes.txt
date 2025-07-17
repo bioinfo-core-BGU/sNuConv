@@ -1,0 +1,7 @@
+	0
+0	Vascular
+1	Adipocytes
+2	Lymphoid_Immune
+3	ASPC1.APC
+4	Other
+5	Myeloid_Immune
